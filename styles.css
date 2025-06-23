@@ -143,6 +143,77 @@ h2::after {
     margin: 10px;
     border-radius: 20px;
 }
+/* Certificate Link Slider */
+.certificate-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    width: 70%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cert-item {
+    min-width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 10px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.cert-item a {
+    text-decoration: none;
+    color: #282c34;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.cert-item a:hover {
+    color: #61dafb;
+}
+
+.certificate-slider button {
+    background-color: #61dafb;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.certificate-slider button:hover {
+    background-color: #21a1f1;
+}
+@media (max-width: 600px) {
+  .slider-track {
+    width: 100%;
+  }
+
+  .cert-item {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  .certificate-slider button {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+  }
+}
+
 
 footer {
     background-color: #282c34;
