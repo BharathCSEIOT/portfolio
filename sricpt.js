@@ -23,4 +23,21 @@
             backToTopButton.classList.remove('visible');
         }
     });
+
+    // Certificate Slider Logic
+    let certSlideIndex = 0;
+
+    function moveCertSlide(direction) {
+        const slider = document.getElementById('certSlider');
+        const items = slider.querySelectorAll('.cert-item');
+        const total = items.length;
+
+        certSlideIndex += direction;
+
+        if (certSlideIndex < 0) certSlideIndex = total - 1;
+        if (certSlideIndex >= total) certSlideIndex = 0;
+
+        const offset = -certSlideIndex * 100;
+        slider.style.transform = `translateX(${offset}%)`;
+    }
 </script>
