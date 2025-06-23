@@ -143,60 +143,6 @@ h2::after {
     margin: 10px;
     border-radius: 20px;
 }
-/* === Certificate Link Slider === */
-.certificate-slider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2rem;
-    position: relative;
-}
-
-.slider-track {
-    display: flex;
-    overflow: hidden;
-    width: 70%;
-    scroll-behavior: smooth;
-    transition: transform 0.5s ease-in-out;
-}
-
-.cert-item {
-    min-width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
-.cert-item a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.cert-item a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
-.certificate-slider button {
-    background-color: #282c34;
-    color: #fff;
-    border: none;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 50%;
-    margin: 0 10px;
-    transition: background-color 0.3s;
-}
-
-.certificate-slider button:hover {
-    background-color: #444;
-}
 
 footer {
     background-color: #282c34;
@@ -222,3 +168,58 @@ footer {
     display: block;
     opacity: 1;
 }
+.certificate-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  position: relative;
+  gap: 1rem;
+}
+
+.slider-wrapper {
+  width: 80%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.cert-item {
+  min-width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cert-item a {
+  text-decoration: none;
+  color: #282c34;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.cert-item a:hover {
+  color: #61dafb;
+}
+
+.certificate-slider button {
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.certificate-slider button:hover {
+  background-color: #21a1f1;
+}
+
