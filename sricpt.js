@@ -31,13 +31,15 @@
         const slider = document.getElementById('certSlider');
         const items = slider.querySelectorAll('.cert-item');
         const total = items.length;
+        
+        // Calculate the new index
+        certSlideIndex = (certSlideIndex + direction + total) % total;
 
-        certSlideIndex += direction;
+        // Calculate the offset based on the new index and item width
+        const itemWidth = items[0].offsetWidth;
+        const gap = 20; // Corresponds to the 'gap' in your CSS
+        const offset = -certSlideIndex * (itemWidth + gap);
 
-        if (certSlideIndex < 0) certSlideIndex = total - 1;
-        if (certSlideIndex >= total) certSlideIndex = 0;
-
-        const offset = -certSlideIndex * 100;
-        slider.style.transform = `translateX(${offset}%)`;
+        slider.style.transform = `translateX(${offset}px)`;
     }
 </script>
