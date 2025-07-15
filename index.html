@@ -41,7 +41,7 @@
   </p>
   <p>
     I'm currently looking for opportunities to grow as a developer and collaborate on impactful projects. Let's build something great together!
-  </p>       
+  </p>        
     </div>
     </section>
 
@@ -52,7 +52,7 @@
                 <div class="project-card">
                     <h3>Projects</h3>
                     <p>Web Development</p>
-                   <a href="#" onclick="openAllLinks()" class="btn">🔗 View Project</a>
+                    <a href="#" onclick="openAllLinks()" class="btn">🔗 View Project</a>
 
 <script>
   function openAllLinks() {
@@ -101,9 +101,12 @@
   <button class="prev" onclick="moveCertSlide(-1)">&#10094;</button>
   <div class="slider-wrapper">
     <div class="slider-track" id="certSlider">
-      <div class="cert-item"><a href="https://example.com/cert1" target="_blank">Certificate 1 - Web Dev</a></div>
-      <div class="cert-item"><a href="https://example.com/cert2" target="_blank">Certificate 2 - IoT Internship</a></div>
-      <div class="cert-item"><a href="https://example.com/cert3" target="_blank">Certificate 3 - Python Basics</a></div>
+      <div class="cert-item"><a href="https://www.credly.com/users/bharath-k.a3636421" target="_blank"> credly certifications</a></div>
+      <div class="cert-item"><a href="https://www.linkedin.com/in/bharath-k-914140229/details/certifications/" target="_blank">Certifications</a></div>
+      <div class="cert-item"><a href="https://example.com/cert3" target="_blank"> Python Basics</a></div>
+        <div class="cert-item"><a href="https://example.com/cert1" target="_blank"> Web Dev</a></div>
+      <div class="cert-item"><a href="https://example.com/cert2" target="_blank">IoT Internship</a></div>
+      <div class="cert-item"><a href="https://example.com/cert3" target="_blank"> Python Basics</a></div>
     </div>
   </div>
   <button class="next" onclick="moveCertSlide(1)">&#10095;</button>
@@ -126,33 +129,46 @@
             <p>&copy; 2024 Bharath K. All rights reserved.</p>
         </div>
     </footer>
-    <!-- Add this inside the body, just before the closing tag -->
-<script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav ul li a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
-    });
 
-    // Back to top button
-    const backToTopButton = document.createElement('a');
-    backToTopButton.href = "#hero";
-    backToTopButton.classList.add('back-to-top');
-    backToTopButton.textContent = '⬆';
-    document.body.appendChild(backToTopButton);
+        // Back to top button
+        const backToTopButton = document.createElement('a');
+        backToTopButton.href = "#hero";
+        backToTopButton.classList.add('back-to-top');
+        backToTopButton.textContent = '⬆';
+        document.body.appendChild(backToTopButton);
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
-            backToTopButton.classList.add('visible');
-        } else {
-            backToTopButton.classList.remove('visible');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        // Certificate Slider Logic - Corrected
+        let certSlideIndex = 0;
+        const slider = document.getElementById('certSlider');
+        const items = slider.querySelectorAll('.cert-item');
+        const total = items.length;
+
+        function moveCertSlide(direction) {
+            certSlideIndex = (certSlideIndex + direction + total) % total;
+
+            // This calculates the width of a single slide item, including the margin/gap.
+            const offset = -certSlideIndex * items[0].offsetWidth;
+            slider.style.transform = `translateX(${offset}px)`;
         }
-    });
-</script>
+    </script>
 </body>
 </html>
-
